@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestalt Principles</title>
+        <!--FONTS-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit&family=Plaster&display=swap" rel="stylesheet">
+        <!--ICONS-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!--STYLESHEET-->
+        <link rel="stylesheet" href="stylesheet.css">
+        <!--BULMA-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <!--ANIME.JS-->
+        <script src="anime.min.js"></script>
+        <!--SCROLL REVEAL JS-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            ScrollReveal({ reset: true });
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="head-grid" id="h1">
+                <div id="h1-1">G</div>
+                <div id="h1-2">E</div>
+                <div id="h1-3">S</div>
+                <div id="h1-4">T</div>
+                <div id="h1-5">A</div>
+                <div id="h1-6">L</div>
+                <div id="h1-7">T</div>
+            </div>
+            <h2>gestalt principles of grouping</h2>
+        </header>
+
+        <nav>
+            <ul>
+                <li class="arrow-button">
+                    <span class="material-symbols-outlined" id="arrow-prev">
+                        arrow_back
+                    </span>
+                </li>
+                <li class="prin" id="prox"><div>PROXIMITY</div></li>
+                <li class="prin" id="sim"><div>SIMILARITY</div></li>
+                <li class="prin" id="cont"><div>CONTINUITY</div></li>
+                <li class="prin" id="clos"><div>CLOSURE</div></li>
+                <li class="prin" id="sym">
+                    <div id="replay-button">
+                        <span class="material-symbols-outlined">
+                            replay
+                        </span>
+                    </div>
+                    <div>SYMMETRY</div>
+                </li>
+                <li class="prin" id="comm">
+                    <div>COMMON FATE</div>
+                </li>
+                <li class="arrow-button">
+                    <span class="material-symbols-outlined" id="arrow-next">
+                        arrow_forward
+                    </span>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="demo-grid">
+                <div class="shape s0-comm" id="s0"></div>
+                <div class="shape s1-comm" id="s1"></div>
+                <div class="shape s2-comm" id="s2"></div>
+                <div class="shape s3-comm" id="s3"></div>
+                <div class="shape s4-comm" id="s4"></div>
+                <div class="shape s5-comm" id="s5"></div>
+                <div class="shape s6-comm" id="s6"></div>
+                <div class="shape s7-comm" id="s7"></div>
+            </div>
+        </section>
+
+        <section class="description">
+            <ul>
+                <li class="arrow-button">
+                    <span class="material-symbols-outlined" id="arrow-example1">
+                        arrow_downward
+                    </span>
+                </li>
+                <li>
+                    <p>Elements that form symmetrical entities are perceived within groups.</p>
+                </li>
+                <li class="arrow-button">
+                    <span class="material-symbols-outlined" id="arrow-example2">
+                        arrow_downward
+                    </span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <div class="example-grid">        
+                <div class="sym-design">
+                    <img src="examples/symmetry-design.jpeg" alt="Apple Music play screen" id="design">
+                </div>
+                <div class="sym-art">
+                    <img src="examples/symmetry-art.png" alt="MC Escher drawing" id="art">
+                </div>
+                <div class="arrow-sym-art">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </div>
+                <div class="sym-art-desc">
+                    <p id="art-desc">This tessellation drawing by MC Escher utilizes symmetry to create an illusion. The figures are mirrored in four directions, so the numerous symmetrical groupings reinforce the illusory nature of this pattern.</p>
+                </div>
+                <div class="arrow-sym-design">
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </div>
+                <div class="sym-design-desc">
+                    <p id="design-desc">The familiar fast-forward and rewind buttons used in music and video players exhibit the Gestalt principles of symmetry. This example screen from the Apple Music app shows these buttons on either side of the play button; their symmetrical placement relates them as actions with opposite functions.</p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            /* SCROLL TO TOP ON LOAD */
+            if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+            } else {
+                window.onbeforeunload = function () {
+                    window.scrollTo(0, 0);
+                };
+            };
+            
+            /* NAVIGATE TO NEXT PRINCIPLES W ARROW */
+            var arrowNext = document.getElementById("arrow-next");
+            var arrowPrev = document.getElementById("arrow-prev");
+            arrowNext.addEventListener("click", function(event){
+                window.location = "commonfate.html";
+            });
+            arrowPrev.addEventListener("click", function(event){
+                window.location = "closure-rev.html";
+            });
+
+            /* HIGHLIGHT PRINCIPLE TEXT */
+            document.getElementById("sym").classList.toggle("current");
+
+            /* ANIMATE SHAPES */
+            var tl = anime.timeline({
+                easing: 'easeInOutQuad',
+                duration: 3000
+            });
+
+            tl
+            .add({
+                targets: '#s0',
+                translateY: 100,
+            }, 0)
+            .add({
+                targets: '#s7',
+                translateY: -100,
+            }, 0)
+            .add({
+                targets: '#s5',
+                translateY: -100,
+            }, 0)
+            .add({
+                targets: '#s4',
+                translateY: 100,
+            }, 0)
+            .add({
+                targets: '#s1, #s3',
+                translateX: 150,
+            }, 0)
+            .add({
+                targets: '#s6, #s2',
+                translateX: -150,
+            }, 0)
+
+            var replay = document.getElementById("replay-button");
+            replay.addEventListener("click", function(event){
+                tl.restart();
+            });
+       
+            /* SCROLL DOWN W ARROWS */
+            var arrow1 = document.getElementById("arrow-example1")
+            var arrow2 = document.getElementById("arrow-example2")
+            arrow1.addEventListener("click", function(event){
+                if (arrow1.classList.contains("example-active")) {
+                    window.scroll({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                    arrow1.classList.remove("example-active");
+                    arrow2.classList.remove("example-active");
+                    anime({
+                        targets: ['#arrow-example1', '#arrow-example2'],
+                        rotate: 360,
+                        easing: 'easeInOutQuad'
+                    });
+                } else {
+                    window.scroll({
+                        top: 750,
+                        behavior: "smooth"
+                    });
+                    arrow1.classList.add("example-active");
+                    arrow2.classList.add("example-active");
+                    anime({
+                        targets: ['#arrow-example1', '#arrow-example2'],
+                        rotate: 180,
+                        easing: 'easeInOutQuad'
+                    });
+                };
+            });
+            arrow2.addEventListener("click", function(event){
+                if (arrow2.classList.contains("example-active")) {
+                    window.scroll({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+                    arrow1.classList.remove("example-active");
+                    arrow2.classList.remove("example-active");
+                    anime({
+                        targets: ['#arrow-example1', '#arrow-example2'],
+                        rotate: 360,
+                        easing: 'easeInOutQuad'
+                    });
+                } else {
+                    window.scroll({
+                        top: 750,
+                        behavior: "smooth"
+                    });
+                    arrow1.classList.add("example-active");
+                    arrow2.classList.add("example-active");
+                    anime({
+                        targets: ['#arrow-example1', '#arrow-example2'],
+                        rotate: 180,
+                        easing: 'easeInOutQuad'
+                    });
+                };
+            });
+
+            /* EXAMPLES SCROLL REVEAL */
+            var slideReveal = {
+                distance: '50%',
+                easing: 'ease-in',
+                duration: 1000,
+                reset: false
+            };
+            ScrollReveal().reveal('.sym-design', slideReveal);
+            ScrollReveal().reveal('.sym-art', slideReveal);
+            ScrollReveal().reveal('.arrow-sym-art', slideReveal);
+            ScrollReveal().reveal('.arrow-sym-design', slideReveal);
+            ScrollReveal().reveal('.sym-art-desc', slideReveal);
+            ScrollReveal().reveal('.sym-design-desc', slideReveal);
+
+            /* EXAMPLES HOVER EFFECTS */
+            var designExample = document.getElementById("design");
+            var designDesc = document.getElementById("design-desc");
+            designExample.addEventListener("mouseover", function(event){
+                designDesc.style.color = "#DDFCBE";
+            });
+            designExample.addEventListener("mouseleave", function(event){
+                designDesc.style.color = "#F9F9EF";
+            });
+
+            var artExample = document.getElementById("art");
+            var artDesc = document.getElementById("art-desc");
+            artExample.addEventListener("mouseover", function(event){
+                artDesc.style.color = "#DDFCBE";
+            });
+            artExample.addEventListener("mouseleave", function(event){
+                artDesc.style.color = "#F9F9EF";
+            });
+
+            /* ABOUT MODAL BULMA */
+            var aboutButton = document.getElementById("about-button")
+            var aboutModal = document.getElementById("about-modal")
+            var aboutClose = document.getElementById("about-close")
+            var aboutBackground = document.getElementById("about-modal-background")
+
+            aboutButton.addEventListener("click", function(event){
+                aboutModal.classList.toggle("is-active");
+            });
+            aboutClose.addEventListener("click", function(event){
+                aboutModal.classList.toggle("is-active");
+            });
+            aboutBackground.addEventListener("click", function(event){
+                aboutModal.classList.toggle("is-active");
+            });   
+            document.addEventListener("keydown", function(event){
+                if (event.keyCode == 27){
+                    if (aboutModal.classList.contains("is-active") == true){
+                        aboutModal.classList.toggle("is-active");
+                    };
+                };
+            });
+        </script>
+
+        <footer>
+            <div>About</div>
+            <div>&copy; 2023 by Mary Frances Haws</div>
+        </footer>
+    </body>
+</html>
