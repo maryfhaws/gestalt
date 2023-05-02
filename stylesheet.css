@@ -24,7 +24,8 @@ Light: #F9F9EF
 body {
     background-color: var(--dark-color);
     margin: 0;
-    overflow: hidden;
+    height: 100%;
+    overflow: hidden !important;
 }
 
 /* HEADER 1 */
@@ -41,7 +42,6 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: -1%;
 }
 #h1-1 {
     grid-column-start: 1;
