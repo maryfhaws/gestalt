@@ -135,6 +135,23 @@
             </div>
         </div>
 
+        <div id="about-modal" class="modal">
+            <div class="modal-content">
+                <span id="close" class="material-symbols-outlined modal-close">
+                    close
+                </span>
+                <h3>About Gestalt Psychology</h3>
+                <p>The Gestalt psychology movement began in the 20th century in opposition to Structualism, a branch of psychology which argued that low-level sensations could explain more complex thought. Unlike this bottom-up view of perceptual processing, Gestaltists thought that psychological phenomena are best represented by the whole, or that "the whole is greater than the sum of its parts."</p>
+                <p>Gestalt psychology was crucial to the understanding that humans perceive whole structures before component sensations. This is also called "prägnanz" (German for "pithiness"), meaning that the we see a simple whole before a complex system of parts.</p>
+                <p>Underlying top-down processes contribute to this inclination to perceive a simple whole, and art and design demonstrate that there is something understood beyond the low-level sensations from an interface component or a colored brushstrake.</p>
+                <p>This website illustrates the Gestalt principles of visual grouping, which were discovered by Gestalt psychologists and can help artists and designers predict and control perception. In this way, the principles are still relevant today in how experiences and meaning are constructed and communicated, from small parts to the greater whole.</p>
+                <div class="quote">
+                    <p><i>"To listen to a symphony, one doesn’t situate oneself among the brass but in a place where the sounds of the diverse instruments blend in the way the composer wanted them to. After that one could enjoy dissecting the score, note by note, and in doing so study the manner of its orchestration. In the same way, in front of a divided picture, it will be advisable first to stand far enough away to perceive the impression of the whole, then stop and come closer to study the play of colored elements."</i></p>
+                    <p>- Paul Signac</p>
+                </div>
+            </div>
+        </div>
+
         <script>
             /* SCROLL TO TOP ON LOAD */
             if (history.scrollRestoration) {
@@ -286,32 +303,34 @@
                 artDesc.style.color = "#F9F9EF";
             });
 
-            /* ABOUT MODAL BULMA */
-            var aboutButton = document.getElementById("about-button")
-            var aboutModal = document.getElementById("about-modal")
-            var aboutClose = document.getElementById("about-close")
-            var aboutBackground = document.getElementById("about-modal-background")
+            /* ABOUT MODAL */
+            var aboutModal = document.getElementById("about-modal");
+            var aboutButton = document.getElementById("about-button");
+            var closeButton = document.getElementById("close");
 
             aboutButton.addEventListener("click", function(event){
-                aboutModal.classList.toggle("is-active");
+                aboutModal.style.display = "block";
             });
-            aboutClose.addEventListener("click", function(event){
-                aboutModal.classList.toggle("is-active");
+            closeButton.addEventListener("click", function(event){
+                aboutModal.style.display = "none";
             });
-            aboutBackground.addEventListener("click", function(event){
-                aboutModal.classList.toggle("is-active");
-            });   
+            window.onclick = function(event){
+                if (event.target == aboutModal){
+                    aboutModal.style.display = "none";
+                };
+            };
             document.addEventListener("keydown", function(event){
                 if (event.keyCode == 27){
-                    if (aboutModal.classList.contains("is-active") == true){
-                        aboutModal.classList.toggle("is-active");
+                    if (aboutModal.style.display == "block"){
+                        aboutModal.style.display = "none";
                     };
                 };
             });
         </script>
 
+        
+
         <footer>
-            <div>About</div>
             <div>&copy; 2023 by Mary Frances Haws</div>
         </footer>
     </body>
